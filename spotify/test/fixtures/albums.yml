@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: albums
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  release    :date
+#  genre      :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  release: 2015-11-24
+  genre: MyString
+
+two:
+  name: MyString
+  release: 2015-11-24
+  genre: MyString

@@ -1,4 +1,18 @@
+# == Route Map
+#
+#     albums GET    /albums(.:format)          albums#index
+#            POST   /albums(.:format)          albums#create
+#  new_album GET    /albums/new(.:format)      albums#new
+# edit_album GET    /albums/:id/edit(.:format) albums#edit
+#      album GET    /albums/:id(.:format)      albums#show
+#            PUT    /albums/:id(.:format)      albums#update
+#            DELETE /albums/:id(.:format)      albums#destroy
+#
+
 Spotify::Application.routes.draw do
+  resources :albums
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
