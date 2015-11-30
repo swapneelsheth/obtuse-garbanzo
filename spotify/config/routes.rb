@@ -10,6 +10,12 @@
 #
 
 Spotify::Application.routes.draw do
+  resources :ratings
+
+
+  resources :songs
+
+
   resources :albums
 
 
