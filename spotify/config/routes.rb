@@ -1,12 +1,27 @@
 # == Route Map
 #
-#     albums GET    /albums(.:format)          albums#index
-#            POST   /albums(.:format)          albums#create
-#  new_album GET    /albums/new(.:format)      albums#new
-# edit_album GET    /albums/:id/edit(.:format) albums#edit
-#      album GET    /albums/:id(.:format)      albums#show
-#            PUT    /albums/:id(.:format)      albums#update
-#            DELETE /albums/:id(.:format)      albums#destroy
+#      ratings GET    /ratings(.:format)           ratings#index
+#              POST   /ratings(.:format)           ratings#create
+#   new_rating GET    /ratings/new(.:format)       ratings#new
+#  edit_rating GET    /ratings/:id/edit(.:format)  ratings#edit
+#       rating GET    /ratings/:id(.:format)       ratings#show
+#              PUT    /ratings/:id(.:format)       ratings#update
+#              DELETE /ratings/:id(.:format)       ratings#destroy
+#        songs GET    /songs(.:format)             songs#index
+#              POST   /songs(.:format)             songs#create
+#     new_song GET    /songs/new(.:format)         songs#new
+#    edit_song GET    /songs/:id/edit(.:format)    songs#edit
+#         song GET    /songs/:id(.:format)         songs#show
+#              PUT    /songs/:id(.:format)         songs#update
+#              DELETE /songs/:id(.:format)         songs#destroy
+# rating_album GET    /albums/:id/rating(.:format) albums#rating
+#       albums GET    /albums(.:format)            albums#index
+#              POST   /albums(.:format)            albums#create
+#    new_album GET    /albums/new(.:format)        albums#new
+#   edit_album GET    /albums/:id/edit(.:format)   albums#edit
+#        album GET    /albums/:id(.:format)        albums#show
+#              PUT    /albums/:id(.:format)        albums#update
+#              DELETE /albums/:id(.:format)        albums#destroy
 #
 
 Spotify::Application.routes.draw do
@@ -16,7 +31,11 @@ Spotify::Application.routes.draw do
   resources :songs
 
 
-  resources :albums
+  resources :albums do
+    member do
+      get 'rating'
+    end
+  end
 
 
   # The priority is based upon order of creation:

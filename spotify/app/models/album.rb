@@ -14,5 +14,6 @@ class Album < ActiveRecord::Base
   
   has_many :songs
   has_many :ratings, through: :songs
+  
   attr_accessible :genre, :name, :release
 end
