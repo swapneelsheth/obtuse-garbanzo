@@ -13,6 +13,12 @@ class AlbumsController < ApplicationController
   def rating
     @rating = Album.find(params[:id]).ratings.average(:review)
   end
+  
+  def top2
+    @albums = Album.order(:release).limit(2)
+    
+    render 'index'
+  end
 
   # GET /albums/1
   # GET /albums/1.json

@@ -35,6 +35,9 @@ Spotify::Application.routes.draw do
     member do
       get 'rating'
     end
+    collection do
+      get 'top2'
+    end
   end
 
 
