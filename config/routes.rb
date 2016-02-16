@@ -25,6 +25,8 @@
 #
 
 Spotify::Application.routes.draw do
+  root :to => 'songs#index'
+
   resources :ratings
 
 
